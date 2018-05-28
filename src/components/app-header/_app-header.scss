@@ -1,0 +1,32 @@
+/*
+* @Author: NiceMing
+* @Date:   2018-04-25 22:09:03
+*/
+.app-header {
+	line-height: 44px;
+	position: relative;
+	height: 44px;
+	text-align: center;
+	color: $color-theme;
+
+	.logo {
+		display: inline-block;
+
+		& > i {
+			font-size: $font-size-large;
+		}
+
+	}
+
+	.title {
+		font-size: $font-size-large;
+		display: inline-block;
+	}
+
+	.mine {
+		position: absolute;
+		top: 0;
+		right: 15px;
+	}
+
+}

@@ -1,0 +1,110 @@
+/*
+* @Author: NiceMing
+* @Date:   2018-04-30 15:15:43
+*/
+.music-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $color-background;
+
+  .back-btn {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    z-index: 10;
+
+    .icon-back {
+      display: block;
+      padding: 10px;
+      font-size: $font-size-large-x;
+      color: $color-theme;
+    }
+  }
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    @include no-wrap();
+    text-align: center;
+    font-size: $font-size-large;
+    color: $color-text;
+    z-index: 10;
+  }
+
+  .bg-image {
+    position: relative;
+    width: 100%;
+    padding-top: 70%;
+    background-size: cover;
+
+    .play-wrapper {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+
+      .play-btn {
+        box-sizing: border-box;
+        width: 135px;
+        padding: 7px 0;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid $color-theme;
+        color: $color-theme;
+        border-radius: 100px;
+
+        .icon-play {
+          display: inline-block;
+          margin-right: 6px;
+          vertical-align: middle;
+          font-size: $font-size-medium-x;
+        }
+
+        .text {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size-small;
+        }
+      }
+    }
+
+    .cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(7, 17, 27, 0.4);
+    }
+  }
+
+  .bg-layer {
+    height: 100%;
+    background-color: $color-background;
+  }
+
+  .list {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $color-background;
+
+    .song-list-wrapper {
+      padding: 20px 30px;
+    }
+
+    .loading-wrapper {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+  }
+}

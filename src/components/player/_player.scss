@@ -1,0 +1,303 @@
+/*
+* @Author: NiceMing
+* @Date:   2018-05-01 10:21:41
+*/
+
+.player {
+  .normal-player {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-background;
+    z-index: 150;
+    .background {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      filter: blur(25px);
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+    }
+    .top {
+      margin-bottom: 25px;
+      .back-btn {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        .icon-back {
+          display: block;
+          padding: 9px;
+          font-size: $font-size-large-x;
+          color: $color-theme;
+          transform: rotate(-90deg);
+        }
+      }
+      .title {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 40px;
+        @include no-wrap();
+        font-size: $font-size-large;
+        color: $color-text;
+      }
+      .subtitle {
+        line-height: 20px;
+        text-align: center;
+        font-size: $font-size-medium;
+        color: $color-text;
+      }
+    }
+    .middle {
+      position: fixed;
+      top: 80px;
+      bottom: 170px;
+      width: 100%;
+      white-space: nowrap;
+      .middle-l {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        width: 100%;
+        padding-top: 80%;
+        height: 0;
+        .cd-wrapper {
+          position: absolute;
+          top: 0;
+          left: 10%;
+          width: 80%;
+          height: 100%;
+          .cd {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 10px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            &.play {
+              animation: rotate 20s linear infinite;
+            }
+            &.pause {
+              animation-play-state: paused;
+            }
+            .cd-image {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .playing-lyric-wrapper {
+          width: 80%;
+          margin: 30px auto 0 auto;
+          overflow: hidden;
+          text-align: center;
+
+          .playing-lyric {
+            height: 20px;
+            line-height: 20px;
+            font-size: $font-size-medium;
+            color: $color-text;
+          }
+        }
+      }
+
+      .middle-r {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .lyric-wrapper {
+          width: 80%;
+          margin: 0 auto;
+          overflow: hidden;
+          text-align: center;
+
+          .text {
+            line-height: 30px;
+            color: $color-text-l;
+            font-size: $font-size-medium;
+
+            &.current {
+              color: $color-text;
+            }
+          }
+        }
+      }
+    }
+    .bottom {
+      position: absolute;
+      bottom: 45px;
+      width: 100%;
+      .dot-wrapper {
+        text-align: center;
+        .dot {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 4px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $color-text-l;
+          &.active {
+            width: 20px;
+            border-radius: 5px;
+            background-color: $color-text-ll;
+          }
+        }
+      }
+      .progress-wrapper {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 0;
+        .time {
+          color: $color-text;
+          font-size: $font-size-small;
+          flex: 0 0 30px;
+          line-height: 30px;
+          width: 30px;
+          &.time-l {
+            text-align: left;
+          }
+          &.time-r {
+            text-align: right;
+          }
+        }
+        .progress-bar-wrapper {
+          flex: 1;
+        }
+      }
+      .operators {
+        display: flex;
+        align-items: center;
+        .icon {
+          flex: 1;
+          color: $color-theme;
+          &.disable {
+            color: $color-theme-d;
+          }
+          & > i {
+            font-size: 30px;
+          }
+        }
+        .i-left {
+          text-align: right;
+        }
+        .i-center {
+          padding: 0 20px;
+          text-align: center;
+          & > i {
+            font-size: 40px;
+          }
+        }
+        .i-right {
+          .icon-favorite {
+            color: $color-sub-theme;
+          }
+        }
+      }
+    }
+    &.normal-enter-active,
+    &.normal-leave-active {
+      transition: all 0.4s;
+      .top,
+      .bottom {
+        transition: all 0.4s cubic-bezier(0.86, 0.18, 0.82, 1.32);
+      }
+    }
+    &.normal-enter,
+    &.normal-leave-to {
+      opacity: 0;
+      .top {
+        transform: translate3d(0, -100px, 0);
+      }
+      .bottom {
+        transform: translate3d(0, 100px, 0);
+      }
+    }
+  }
+  .mini-player {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: $color-highlight-background;
+    z-index: 180;
+    .mini-cd {
+      flex: 0 0 40px;
+      width: 40px;
+      padding: 0 10px 0 20px;
+
+      .mini-cd-image {
+        width: 100%;
+        border-radius: 50%;
+
+        &.play {
+          animation: rotate 20s linear infinite;
+        }
+        &.pause {
+          animation-play-state: paused;
+        }
+      }
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      line-height: 20px;
+      overflow: hidden;
+      .name,
+      .desc {
+        @include no-wrap();
+      }
+      .name {
+        margin-bottom: 2px;
+        font-size: $font-size-medium;
+        color: $color-text;
+      }
+      .desc {
+        font-size: $font-size-small;
+        color: $color-text-d;
+      }
+    }
+    .control {
+      flex: 0 0 30px;
+      width: 30px;
+      padding: 0 10px;
+      .icon-play-mini,
+      .icon-pause-mini,
+      .icon-playlist {
+        font-size: 30px;
+        color: $color-theme-d;
+      }
+      .icon-mini {
+        font-size: 32px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,62 @@
+/*
+* @Author: NiceMing
+* @Date:   2018-04-26 13:42:42
+*/
+.rank {
+  position: fixed;
+  width: 100%;
+  top: 88px;
+  bottom: 0;
+
+  .rank-content {
+    height: 100%;
+    overflow: hidden;
+
+    .rank-item {
+      display: flex;
+      height: 100px;
+      margin: 0 20px;
+      padding-top: 20px;
+
+      &:last-child {
+        padding-bottom: 20px;
+      }
+
+      .icon {
+        flex: 0 0 100px;
+        width: 100px;
+        height: 100px;
+
+        .icon-img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .songs {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100px;
+        padding: 0 20px;
+        overflow: hidden;
+        background-color: $color-highlight-background;
+        color: $color-text-d;
+        font-size: $font-size-medium;
+
+        .song {
+          @include no-wrap();
+          line-height: 26px;
+        }
+      }
+    }
+
+    .loading-wrapper {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
